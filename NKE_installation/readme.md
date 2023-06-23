@@ -96,7 +96,10 @@ This exercise will teach you how to create a Kubernetes cluster with NKE.
     1. Click on the `Download kubeconfig` button
         <br><img src="images/7.png" width="400px">
     1. Put the file where you want on your laptop 
+
+    <br>Note : Your kubeconfig file is valid only 24h, for security reasons.
     </details><br>
+
 
 1. Change your $KUBECONFIG variable to target this file
     <details>
