@@ -1,21 +1,17 @@
 *Difficulty: 1/5*
 
-## Summary:
+# Summary:
 
-This exercise will teach you how to deploy a kubernets cluster with Nutanix Kubernetes Engine. 
+This exercise will teach you how to deploy activate Nutanix Kubernetes Engine on a Nutanix Cluster. 
 
----
-
-### Prerequisites
+# Prerequisites
 * A Nutanix cluster
 * A Prism Central (>PC.2023.1.0.1), connected to his hosting cluster
 * Admin credentials for this Prism Central
 
 Note that this exercise can be done only once per Prism Central.
 
----
-
-## Exercise
+# Exercise
 
 1. Enable Marketplace
     <details>

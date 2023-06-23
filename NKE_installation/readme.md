@@ -1,12 +1,12 @@
 *Difficulty: 1/5*
 
-## Summary:
+# Summary:
 
-This exercise will teach you how to activate Nutanix Kubernetes Engine in Prism Central. 
+This exercise will teach you how to create a Kubernetes cluster with NKE.
 
----
 
-### Prerequisites
+
+# Prerequisites
 * A Nutanix cluster using AHV
     * ESXi is not supported for NKE clusters
 * Nutanix Kubernetes Engine need to be activated in Prism [link]([https://portal.nutanix.com/page/documents/details?targetId=Nutanix-Kubernetes-Engine-v2_8:top-install-t.html) and up-to-date
@@ -16,9 +16,9 @@ This exercise will teach you how to activate Nutanix Kubernetes Engine in Prism 
     * **Development clusters** : Configure an AHV network with IPAM and IP address pools or with an external DHCP network.
 * `kubectl` command must be installed on your laptop. 
 
----
 
-## Exercise
+
+# Exercise
 1. Go on NKE page in Prism
     <details>
     <summary>Answer</summary>
