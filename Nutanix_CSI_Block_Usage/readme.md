@@ -142,7 +142,7 @@ You can have (only) one default Storage Class on your kubernetes cluster. If you
     <summary>Answer</summary>
 
     > You should be able to list it
-    > <br><img src="images/1.png" width="400px">
+    > <br><img src="images/1.png" width="700px">
     </details><br>
 
 1. Launch shell on this pod, and create a "/data/data.txt" file with any string you want as content.
