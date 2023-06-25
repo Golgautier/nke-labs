@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: <name>
+  labels:
+    #To be defined
+    #Format > Name: Value
+spec:
+  selector:
+    matchLabels:
+      #To be defined
+      #Same format than in metadata
+  template:
+    metadata:
+      labels:
+        #To be defined
+        #Same format than in metadata
+    spec:
+      containers:
+      - name: <name>
+        image: <image>

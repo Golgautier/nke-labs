@@ -1,0 +1,9 @@
+apiVersion: dataservices.nutanix.com/v1alpha1
+kind: ApplicationSnapshot
+metadata:
+  name: <name>
+spec:
+  source:
+    applicationRef:
+      name: <Application name>
+      namespace: <Namespace of the app>

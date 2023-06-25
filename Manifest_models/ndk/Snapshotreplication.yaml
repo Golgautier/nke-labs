@@ -1,0 +1,7 @@
+apiVersion: dataservices.nutanix.com/v1alpha1
+kind: ApplicationSnapshotReplication
+metadata:
+  name: <name>
+spec:
+  applicationSnapshotName: <Snapshot name to replicate>
+  replicationTargetName: <name of the target of replication>

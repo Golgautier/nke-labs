@@ -1,0 +1,9 @@
+apiVersion: dataservices.nutanix.com/v1alpha1
+kind: AppSyncProtection
+metadata:
+  name: <name>
+spec:
+  applicationName: <Application to protect>
+  replicationTargetName: <ReplicationTarget Name>
+  appConfigSyncIntervalSecs: <dump k8s assets interval in seconds>
+  suspend: false

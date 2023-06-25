@@ -1,0 +1,6 @@
+apiVersion: dataservices.nutanix.com/v1alpha1
+kind: ApplicationFailover
+metadata:
+  name: <Name>
+spec:
+  applicationName: <App to failover>

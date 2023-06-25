@@ -1,0 +1,8 @@
+apiVersion: dataservices.nutanix.com/v1alpha1
+kind: ApplicationClone
+metadata:
+  name: <name>
+spec:
+  applicationRef:
+      name: <name of app to clone>
+      namespace: <namemspace of the app>

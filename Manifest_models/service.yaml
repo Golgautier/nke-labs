@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: <name>
+spec:
+  selector:
+    # Put here label selectors
+  ports:
+    - protocol: <TCP/UDP>
+      port: <Port of Service>
+      targetPort: <Port of the pod>

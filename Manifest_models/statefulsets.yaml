@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: <name>
+    labels:
+    #To be defined
+    #Format > Name: Value
+spec:
+  selector:
+    matchLabels:
+      #To be defined
+      #Same format than in metadata
+  serviceName: <service name>
+  replicas: <number>
+  template:
+    metadata:
+      #To be defined
+      #Same format than in metadata
+    spec:
+      containers:
+      - name: <name>
+        image: <image>
+        ports:
+        - containerPort: <port number>
+          name: <port name>
+        volumeMounts:
+        - name: <volume name>
+          mountPath: <mount path>
+  volumeClaimTemplates:
+  - metadata:
+      name: <volume name>
+    spec:
+      resources:
+        requests:
+          storage: <volume size>

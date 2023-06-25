@@ -23,9 +23,9 @@ This exercise will teach you how to create a Kubernetes cluster with NKE.
     <details>
     <summary>Answer</summary>
     
-    1. Connect on Prism with you account
-    1. In the main menu, select `Kubernetes Management`
-        <br><img src="images/1.png" width="300px">
+    >1. Connect on Prism with you account
+    >1. In the main menu, select `Kubernetes Management`
+    >    <br><img src="images/1.png" width="300px">
 
     </details><br>
 
@@ -33,10 +33,10 @@ This exercise will teach you how to create a Kubernetes cluster with NKE.
     <details>
     <summary>Answer</summary>
     
-    1. In the left menu, select `OS images`
-    1. In the main window, you should see a list of image available
-    1. Use the `download` button of images you want to download
-    1. Wait for end of image(s) download 
+    >1. In the left menu, select `OS images`
+    >1. In the main window, you should see a list of image available
+    >1. Use the `download` button of images you want to download
+    >1. Wait for end of image(s) download 
 
     </details><br>
     
@@ -64,38 +64,38 @@ This exercise will teach you how to create a Kubernetes cluster with NKE.
     <details>
     <summary>Answer</summary>
     
-    1. In left Menu, click on `clusters`
-    1. In the main window, click on `Create Kubernetes Workload`
-    1. Select your cluster type (Probably `Production`)
-    1. Click on `Next`
-    1. Fill the form with the good inputs
-        <br><img src="images/2.png" width="400px">
-    1. Click on `Next` blue button
-    1. Fill the next form with the good inputs
-        <br><img src="images/3.png" width="400px">
-    1. Click on `Next` blue button
-    1. Select the CNI
-    1. You can let the default IP range
-        <br><img src="images/4.png" width="400px">
-    1. Click on next
-    1. Enter information for your storage-class
-        * NKE deploys automatically a storage class to simply consume Nutanix block storage. This SC will be setuped as default class.
-    
-        <br><img src="images/5.png" width="400px">
-    1. Finish by clicking on `Create` blue button
-    1. Wait for end of cluster creation
-        <br><img src="images/5.png" width="400px">
-    1. Congrats, you have deployed your 1st kubernetes cluster
+    >1. In left Menu, click on `clusters`
+    >1. In the main window, click on `Create Kubernetes Workload`
+    >1. Select your cluster type (Probably `Production`)
+    >1. Click on `Next`
+    >1. Fill the form with the good inputs
+    >    <br><img src="images/2.png" width="400px">
+    >1. Click on `Next` blue button
+    >1. Fill the next form with the good inputs
+    >    <br><img src="images/3.png" width="400px">
+    >1. Click on `Next` blue button
+    >1. Select the CNI
+    >1. You can let the default IP range
+    >    <br><img src="images/4.png" width="400px">
+    >1. Click on next
+    >1. Enter information for your storage-class
+    >    * NKE deploys automatically a storage class to simply consume Nutanix block storage. This SC will be setuped as default class.
+    >
+    >    <br><img src="images/5.png" width="400px">
+    >1. Finish by clicking on `Create` blue button
+    >1. Wait for end of cluster creation
+    >    <br><img src="images/5.png" width="400px">
+    >1. Congrats, you have deployed your 1st kubernetes cluster
     </details><br>
 
 1. Get kubeconfig file from NKE GUI
     <details>
     <summary>Answer</summary>
     
-    1. In NKE GUI, click on the name of your cluster
-    1. Click on the `Download kubeconfig` button
-        <br><img src="images/7.png" width="400px">
-    1. Put the file where you want on your laptop 
+    >1. In NKE GUI, click on the name of your cluster
+    >1. Click on the `Download kubeconfig` button
+    >    <br><img src="images/7.png" width="400px">
+    >1. Put the file where you want on your laptop 
 
     <br>Note : Your kubeconfig file is valid only 24h, for security reasons.
     </details><br>
@@ -105,28 +105,32 @@ This exercise will teach you how to create a Kubernetes cluster with NKE.
     <details>
     <summary>Answer</summary>
     
-    1. Execute command `export KUBECONFIG=<path to the downloaded file>`
+    >1. Execute command `export KUBECONFIG=<path to the downloaded file>`
     </details><br>
 
 1. Use kubectl command to get nodes list and validate k8s cluster connection
     <details>
     <summary>Answer</summary>
-    You have 2 options :
-
-    - As you have changed your `KUBECONFIG` environment variable value, you can launch command `kubectl get nodes`
-    - You can also execute command `kubeconfig --kubeconfig <path to the downloaded file> get nodes`
     
-    <br>You should have an output similar to this one :
-    ```
-    NAME                         STATUS   ROLES                  AGE   VERSION
-    gl-gautier-b4d7aa-master-0   Ready    control-plane,master   22m   v1.24.10
-    gl-gautier-b4d7aa-master-1   Ready    control-plane,master   21m   v1.24.10
-    gl-gautier-b4d7aa-worker-0   Ready    node                   20m   v1.24.10
-    gl-gautier-b4d7aa-worker-1   Ready    node                   19m   v1.24.10
-    gl-gautier-b4d7aa-worker-2   Ready    node                   19m   v1.24.10 
-    ```
-    Note : etcd machines are not displayed, it is normal
+    >You have 2 options :
+    >
+    >- As you have changed your `KUBECONFIG` environment variable value, you can launch command `kubectl get nodes`
+    >- You can also execute command `kubeconfig --kubeconfig <path to the downloaded file> get nodes`
+    >
+    ><br>You should have an output similar to this one :
+    >```
+    >NAME                         STATUS   ROLES                  AGE   VERSION
+    >gl-gautier-b4d7aa-master-0   Ready    control-plane,master   22m   v1.24.10
+    >gl-gautier-b4d7aa-master-1   Ready    control-plane,master   21m   v1.24.10
+    >gl-gautier-b4d7aa-worker-0   Ready    node                   20m   v1.24.10
+    >gl-gautier-b4d7aa-worker-1   Ready    node                   19m   v1.24.10
+    >gl-gautier-b4d7aa-worker-2   Ready    node                   19m   v1.24.10 
+    >```
+    >Note : etcd machines are not displayed, it is normal
 
     </details><br>
 
+# Takeover
 
+* NKE is a perfect solution to deploy kubernetes clusters without any skills
+* 2 types of deployment are available, production type provisions a highly available cluster

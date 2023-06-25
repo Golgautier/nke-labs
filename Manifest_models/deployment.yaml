@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: <name>
+  labels:
+    #To be defined
+    #Format > Name: Value
+spec:
+  # modify replicas according to your case
+  replicas: <number>
+  selector:
+    matchLabels:
+      #To be defined
+      #Same format than in metadata
+  template:
+    metadata:
+      labels:
+      #To be defined
+      #Same format than in metadata
+    spec:
+      containers:
+      - name: <name>
+        image: <image>

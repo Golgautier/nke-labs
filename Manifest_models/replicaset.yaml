@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: <name>
+  labels:
+    #To be defined
+    #Format > Name: Value
+spec:
+  # modify replicas according to your case
+  replicas: <number>
+  selector:
+    matchLabels:
+      #To be defined
+      #Same format than in metadata
+  template:
+    metadata:
+      #To be defined
+      #Same format than in metadata
+    spec:
+      containers:
+      - name: <name>
+        image: <image>

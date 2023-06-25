@@ -1,0 +1,36 @@
+apiVersion: dataservices.nutanix.com/v1alpha1
+kind: SchedulePolicy
+metadata:
+  name: <name>
+spec:
+  interval:
+    minutes: <interval in mn>
+---
+apiVersion: dataservices.nutanix.com/v1alpha1
+kind: SchedulePolicy
+metadata:
+  name: <name>
+spec:
+  daily:
+    time: <time to execute snap>
+---
+apiVersion: dataservices.nutanix.com/v1alpha1
+kind: ProtectionPlan
+metadata: 
+  name: <name>
+spec: 
+  snapshotPolicies: 
+    - retentionPolicy:
+        retain: <how many snap to retain>
+      schedulePolicyName: <name of schedule policy previsouky created>
+  suspend: false
+---
+apiVersion: dataservices.nutanix.com/v1alpha1
+kind: AppProtectionPlan
+metadata:
+  name: <name>
+spec:
+  suspend: false
+  applicationNames: 
+    - <application to protect>
+  protectionPlanName: <name of the protection plan already created>

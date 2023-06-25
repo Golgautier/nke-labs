@@ -1,0 +1,6 @@
+apiVersion: dataservices.nutanix.com/v1alpha1
+kind: ApplicationRestoreRequest
+metadata:
+  name: <name>
+spec:
+  applicationSnapshotName: <name of the snapshot to restore>
