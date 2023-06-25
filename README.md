@@ -3,6 +3,9 @@
 Here is the list of exercices available : 
 * [NKE activation](./NKE_activation/)
 * [NKE Cluster deployment](./NKE_installation/)
+* [Nutanix Karbon plugin](./Nutanix_karbon_plugin/)
+* [ImagePullSecret usage to authenticate with registries](./Use_Pull_Secret/)
+* [Nutanix CSI usage in block mode](./Nutanix_CSI_Block_Usage/)
 
 
 Useful resources :
