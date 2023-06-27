@@ -45,7 +45,7 @@ In this exercise, we will to it for dockerhub.
 
 1. Create a simple manifest to create :
     * A pod with image `php:7.2-apache` 
-    * Using you secret for the donwload fom dockerhub registry
+    * Using you secret for the download from dockerhub registry
 
     <details>
     <summary>Answer</summary>
