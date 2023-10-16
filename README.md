@@ -10,8 +10,8 @@ Here is the list of exercices available :
 * [Nutanix CSI usage in block mode](./Nutanix_CSI_Block_Usage/)
 * Nutanix CSI usage in Files mode (Coming soon)
 * [Network filtering](./Pod_network_filtering/)
-* [Protect your workloads with NDK - Async mode only](./Nutanix_NDK/)
-* Protect your workloads with NDK - Sync mode only(Coming soon)
+* Protect your workloads with NDK - Async mode only (Coming soon)
+* Protect your workloads with NDK - Sync mode only (Coming soon)
 * Clone an app with NDK (Coming soon)
 
 Useful resources :
