@@ -12,7 +12,7 @@ This exercise will teach you how to use Nutanix CSI for Nutanix Files
 
 # Presentation / Context
 
-Nutanix provides a CSI driver to consume storage with kubernetes.
+Nutanix provides a CSI driver to consume storage with Kubernetes.
 
 The CSI driver can use block storage (using Nutanix Volumes) and files storage (using Nutanix Files). We often use block storage by default, for RWO (Read Write Once persistent Volume) and files storage for RWX (Read WRite Many) access.
 
