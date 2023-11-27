@@ -31,7 +31,7 @@ A great plugin exists for kubectl to directly get the kubeconfig file from Prism
    <details>
    <summary>Answer</summary>
 
-   > 1. Execute command `kubectl kargon login --server <Prism Central IP or FQDN> --username <your user>`
+   > 1. Execute command `kubectl karbon login --server <Prism Central IP or FQDN> --user <your user>`
    >
    >    Note: you can also use
    >

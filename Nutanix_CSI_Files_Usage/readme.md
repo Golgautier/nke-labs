@@ -12,7 +12,7 @@ This exercise will teach you how to use Nutanix CSI for Nutanix Files
 
 # Presentation / Context
 
-Nutanix provides a CSI driver to consume storage with kubernetes.
+Nutanix provides a CSI driver to consume storage with Kubernetes.
 
 The CSI driver can use block storage (using Nutanix Volumes) and files storage (using Nutanix Files). We often use block storage by default, for RWO (Read Write Once persistent Volume) and files storage for RWX (Read WRite Many) access.
 
@@ -129,7 +129,7 @@ Two Nutanix Files mode can be created :
 
 ## Create Stateful Application with ReplicaSet, with a persistent volume using Nutanix Files Static StorageClass
 
-1. Look at these page. and use the replicaset manifest example to test the Nutanix Files deployment. : [link](https://portal.nutanix.com/page/documents/details?targetId=CSI-Volume-Driver-v2_6:csi-csi-plugin-deploy-pvc-files-replicaset-t.html). Name your replicaset nginx-replicaset-on-nutanix-files-static
+1. Look at these page. and use the replicaset manifest example to test the Nutanix Files deployment. : [link](https://portal.nutanix.com/page/documents/details?targetId=CSI-Volume-Driver-v2_6:csi-csi-plugin-deploy-pvc-files-replicaset-t.html). Name your replicaset replicaset-my-app-files-static
 1. Create a manifest to deploy :
 
    - a replicaset named replicaset-my-app-files-static
@@ -196,7 +196,7 @@ Two Nutanix Files mode can be created :
 
 ## Create Stateful Application with ReplicaSet, with a persistent volume using Nutanix Files Dynamic StorageClass
 
-1. Look at these page. and use the replicaset manifest example to test the Nutanix Files deployment. : [link](https://portal.nutanix.com/page/documents/details?targetId=CSI-Volume-Driver-v2_6:csi-csi-plugin-deploy-pvc-files-replicaset-t.html). Name your replicaset nginx-replicaset-on-nutanix-files-static
+1. Look at these page. and use the replicaset manifest example to test the Nutanix Files deployment. : [link](https://portal.nutanix.com/page/documents/details?targetId=CSI-Volume-Driver-v2_6:csi-csi-plugin-deploy-pvc-files-replicaset-t.html). Name your replicaset my-app-files-dynamic
 1. Create a manifest to deploy :
 
    - a replicaset named replicaset-my-app-files-dynamic
