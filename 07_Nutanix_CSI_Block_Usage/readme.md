@@ -53,53 +53,56 @@ You can have (only) one default Storage Class on your kubernetes cluster. If you
    > kind: PersistentVolumeClaim
    > apiVersion: v1
    > metadata:
-   > name: my-pvc
+   >   name: my-pvc
    > spec:
-   > accessModes:
-   >    - ReadWriteOnce
-   > resources:
-   >    requests:
-   >        storage: 5Gi
+   >   accessModes:
+   >     - ReadWriteOnce
+   >   resources:
+   >     requests:
+   >       storage: 5Gi
+   > 
    > ---
    > apiVersion: apps/v1
    > kind: Deployment
    > metadata:
-   > name: my-dep
-   > labels:
-   >    app: my-app
+   >   name: my-dep
+   >   labels:
+   >     app: my-app
    > spec:
-   > replicas: 1
-   > selector:
-   >    matchLabels:
-   >    app: my-app
-   > template:
-   >    metadata:
-   >    labels:
-   >        app: my-app
-   >    spec:
-   >    containers:
-   >    - name: my-cont
-   >        image: gautierleblanc/nke-labs:latest
-   >        imagePullPolicy: Always
-   >        volumeMounts:
-   >            - mountPath: /data
-   >            name: mypvc
-   >    volumes:
-   >        - name: mypvc
-   >        persistentVolumeClaim:
-   >            claimName: my-pvc
+   >   replicas: 1
+   >   selector:
+   >     matchLabels:
+   >       app: my-app
+   >   template:
+   >     metadata:
+   >       labels:
+   >         app: my-app
+   >     spec:
+   >       containers:
+   >         - name: my-cont
+   >           image: gautierleblanc/nke-labs:latest
+   >           imagePullPolicy: Always
+   >           volumeMounts:
+   >             - mountPath: /data
+   >               name: mypvc
+   >       volumes:
+   >         - name: mypvc
+   >           persistentVolumeClaim:
+   >             claimName: my-pvc
+   > 
    > ---
    > apiVersion: v1
    > kind: Service
    > metadata:
-   > name: my-svc
+   >   name: my-svc
    > spec:
-   > selector:
-   >    app: my-app
-   > ports:
-   >    - protocol: TCP
-   >    port: 80
-   >    targetPort: 80
+   >   selector:
+   >     app: my-app
+   >   ports:
+   >     - protocol: TCP
+   >       port: 80
+   >       targetPort: 80
+   > 
    > ```
    >
    > </details><br>
@@ -182,13 +185,13 @@ You can have (only) one default Storage Class on your kubernetes cluster. If you
    > kind: PersistentVolumeClaim
    > apiVersion: v1
    > metadata:
-   > name: my-pvc
+   >   name: my-pvc
    > spec:
-   > accessModes:
-   >   - ReadWriteOnce
-   > resources:
-   >   requests:
-   >     storage: 6Gi
+   >   accessModes:
+   >     - ReadWriteOnce
+   >   resources:
+   >     requests:
+   >       storage: 6Gi
    > ```
 
    </details><br>
@@ -224,66 +227,65 @@ You can have (only) one default Storage Class on your kubernetes cluster. If you
 
 1. Look at this page : [link](https://portal.nutanix.com/page/documents/details?targetId=CSI-Volume-Driver-v2_6:csi-csi-driver-clone-pvc-t.html)
 1. Create a second app based on the same manifest, but using a clone of your PVC
-
    <details>
    <summary>Answer</summary>
-
-   > ```yaml
-   > apiVersion: v1
-   > kind: PersistentVolumeClaim
-   > metadata:
-   > name: my-pvc-clone
-   > spec:
-   > dataSource:
+   
+   >```yaml
+   >apiVersion: v1
+   >kind: PersistentVolumeClaim
+   >metadata:
+   >  name: my-pvc-clone
+   >spec:
+   >  dataSource:
    >    name: my-pvc
    >    kind: PersistentVolumeClaim
-   > accessModes:
+   >  accessModes:
    >    - ReadWriteOnce
-   > resources:
+   >  resources:
    >    requests:
-   >    storage:  6Gi
-   > ---
-   > apiVersion: apps/v1
-   > kind: Deployment
-   > metadata:
-   > name: my-dep-clone
-   > labels:
+   >      storage:  6Gi
+   >---
+   >apiVersion: apps/v1
+   >kind: Deployment
+   >metadata:
+   >  name: my-dep-clone
+   >  labels:
    >    app: my-app-clone
-   > spec:
-   > replicas: 1
-   > selector:
+   >spec:
+   >  replicas: 1
+   >  selector:
    >    matchLabels:
-   >    app: my-app-clone
-   > template:
+   >      app: my-app-clone
+   >  template:
    >    metadata:
-   >    labels:
+   >      labels:
    >        app: my-app-clone
    >    spec:
-   >    containers:
-   >    - name: my-cont
-   >        image: gautierleblanc/nke-labs:latest
-   >        imagePullPolicy: Always
-   >        volumeMounts:
+   >      containers:
+   >        - name: my-cont
+   >          image: gautierleblanc/nke-labs:latest
+   >          imagePullPolicy: Always
+   >          volumeMounts:
    >            - mountPath: /data
-   >            name: mypvc-clone
-   >    volumes:
+   >              name: mypvc-clone
+   >      volumes:
    >        - name: mypvc-clone
-   >        persistentVolumeClaim:
+   >          persistentVolumeClaim:
    >            claimName: my-pvc-clone
-   > ---
-   > apiVersion: v1
-   > kind: Service
-   > metadata:
-   > name: my-svc-app-clone
-   > spec:
-   > selector:
+   >---
+   >apiVersion: v1
+   >kind: Service
+   >metadata:
+   >  name: my-svc-app-clone
+   >spec:
+   >  selector:
    >    app: my-app-clone
-   > ports:
+   >  ports:
    >    - protocol: TCP
-   >    port: 80
-   >    targetPort: 80
-   > ```
-
+   >      port: 80
+   >      targetPort: 80
+   >```
+   
    </details><br>
 
 1. Display pvc from your namespace
@@ -330,29 +332,31 @@ You can have (only) one default Storage Class on your kubernetes cluster. If you
    <summary>Answer</summary>
 
    > 1. Create a manifest to create a snapshot class. Warning, your secret name can be different, check this point first.
-   >    ```yaml
-   >    apiVersion: snapshot.storage.k8s.io/v1
-   >    kind: VolumeSnapshotClass
-   >    metadata:
-   >    name: nutanix-volume-snapshot-class
-   >    driver: csi.nutanix.com
-   >    parameters:
-   >    storageType: NutanixVolumes
-   >    csi.storage.k8s.io/snapshotter-secret-name: ntnx-secret
-   >    csi.storage.k8s.io/snapshotter-secret-namespace: kube-system
-   >    deletionPolicy: Delete
-   >    ```
+   >```yaml
+   >---
+   >apiVersion: snapshot.storage.k8s.io/v1
+   >kind: VolumeSnapshotClass
+   >metadata:
+   >  name: nutanix-volume-snapshot-class
+   >driver: csi.nutanix.com
+   >parameters:
+   >  storageType: NutanixVolumes
+   >  csi.storage.k8s.io/snapshotter-secret-name: ntnx-secret
+   >  csi.storage.k8s.io/snapshotter-secret-namespace: kube-system
+   >deletionPolicy: Delete
+   >```
    > 1. Apply it with command `kubectl apply -f <your maninifest file> -n <your namespace>`
    > 1. Create another manifest to clone your 1st pvc
-   >    ```yaml
-   >    apiVersion: snapshot.storage.k8s.io/v1
-   >    kind: VolumeSnapshot
-   >    metadata:
-   >    name: my-snapshot
-   >    spec:
-   >    volumeSnapshotClassName: nutanix-volume-snapshot-class
-   >    source:
-   >      persistentVolumeClaimName: my-pvc
+   >```yaml
+   >---
+   >apiVersion: snapshot.storage.k8s.io/v1
+   >kind: VolumeSnapshot
+   >metadata:
+   >  name: my-snapshot
+   >spec:
+   >  volumeSnapshotClassName: nutanix-volume-snapshot-class
+   >  source:
+   >    persistentVolumeClaimName: my-pvc
    >    ```
    > 1. Apply it with command `kubectl apply -f <your maninifest file> -n <your namespace>`
 
@@ -391,21 +395,23 @@ You can have (only) one default Storage Class on your kubernetes cluster. If you
    <summary>Answer</summary>
 
    > 1. Create this manifest
-   >    ```yaml
-   >    apiVersion: v1
-   >    kind: PersistentVolumeClaim
-   >    metadata:
-   >    name: my-pcv-from-snap
-   >    spec:
-   >    dataSource:
-   >      name: my-snapshot
-   >      kind: VolumeSnapshot
-   >      apiGroup: snapshot.storage.k8s.io
-   >    accessModes:
-   >      - ReadWriteOnce
-   >    resources:
-   >      requests:
-   >        storage: 6Gi
+   >```yaml
+   >---
+   >apiVersion: v1
+   >kind: PersistentVolumeClaim
+   >metadata:
+   >  name: my-pcv-from-snap
+   >spec:
+   >  dataSource:
+   >    name: my-snapshot
+   >    kind: VolumeSnapshot
+   >    apiGroup: snapshot.storage.k8s.io
+   >  accessModes:
+   >    - ReadWriteOnce
+   >  resources:
+   >    requests:
+   >      storage: 6Gi
+   >
    >    ```
    > 1. Launch command `kubectl apply -f <your manifest> -n <your namespace>`
 

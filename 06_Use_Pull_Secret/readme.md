@@ -28,7 +28,7 @@ In this exercise, we will to it for dockerhub.
    <details>
    <summary>Answer</summary>
 
-   > 1. Launch command `kubectl create secret docker-registry <name of your secret> --docker-server=<your-registry-server> --docker-username=<your-name> --docker-password=<your-pword> --docker-email=<your-email> -n <your namespace>`
+   > 1. Launch command `kubectl create secret docker-registry <name of your secret> --docker-username=<your-name> --docker-password=<your-pword> -n <your namespace>`
 
    > </details><br>
 

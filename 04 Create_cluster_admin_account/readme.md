@@ -85,15 +85,15 @@ If you strugglle during this lab, you will find all needed documentation here : 
         > apiVersion: rbac.authorization.k8s.io/v1
         > kind: ClusterRoleBinding
         > metadata:
-        > name: gl-user-admin
+        >   name: gl-user-admin
         > subjects:
         > - kind: User
-        > name: <initials>_user
-        > apiGroup: rbac.authorization.k8s.io
+        >   name: <initials>_user
+        >   apiGroup: rbac.authorization.k8s.io
         > roleRef:
-        > kind: ClusterRole
-        > name: cluster-admin
-        > apiGroup: rbac.authorization.k8s.io
+        >   kind: ClusterRole
+        >   name: cluster-admin
+        >   apiGroup: rbac.authorization.k8s.io
         >```
 
         </details><br>

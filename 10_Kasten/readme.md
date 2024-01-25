@@ -14,7 +14,7 @@ This exercise will teach you how to use backup solution, like Kasten, to backup 
 
 In order to deploy the Kasten backup solution, we'll mainly used the official [Kasten documentation](https://docs.kasten.io/latest/install/other/other.html) to deploy it.
 
-1. First, deploy a basic application, which will user nginx image, and have a PVC stored on the default storageclass. It has to be deployed in the new namespace name demo-backup-kaster
+1. First, deploy a basic application, which will user nginx image, and have a PVC stored on the default storageclass. It has to be deployed in the new namespace name demo-backup-kasten
    <details>
    <summary>Answer</summary>
 
@@ -113,7 +113,7 @@ In order to deploy the Kasten backup solution, we'll mainly used the official [K
 
    > 1. Use helm install command to deploy kasten. It can take a couple of seconds to have an output saying kasten as been deployed.
    >    `helm install k10 kasten/k10 --namespace=kasten-io`
-   > 2. Once kasten deploy, you should use kubectl port-foward command to get access to Kasten Dashboard `kubectl --namespace kasten-io port-forward service/gateway 8080:8000`
+   > 2. Once kasten deploy, you should use kubectl port-foward command to get access to Kasten Dashboard `kubectl --namespace kasten-io port-forward service/gateway 8080:8000 --address 0.0.0.0`
    > 3. From you laptop, you should be able to access Kasten dashboard from a Web Browser at this address http://127.0.0.1:8080/k10/#/
    > 4. Kasten is now deployed, and ready to be configured. Keep this window Open.
 
