@@ -45,7 +45,7 @@ This exercise will teach you how to create a Kubernetes cluster with NKE.
      - Tip : NKE supports only lower chars and dash symbol
    - Nutanix cluster : choose the cluster of your choice (if you have many)
    - Kubernetes version : choose the **last version - 1** (it will allow us to test upgrade later)
-   - Host OS : choose the **last version -1** (it will allow us to test upgrade later)
+   - Host OS : choose the **last version -1** (if possible, it will allow us to test upgrade later)
    - Network : Choose the network of your choice
    - Number of workers : 3
    - Change config of worker to setup : 8 vCPU, 12 GB of RAM and 120 GB of disk

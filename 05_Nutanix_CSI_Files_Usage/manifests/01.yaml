@@ -1,0 +1,14 @@
+---
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: nutanix-files-static
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "false"
+provisioner: csi.nutanix.com
+parameters:
+  nfsServer: <your file server>
+  nfsPath: /<your share name>
+  storageType: NutanixFiles
+reclaimPolicy: Delete or Retain
+volumeBindingMode: Immediate

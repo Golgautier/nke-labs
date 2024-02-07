@@ -1,0 +1,10 @@
+apiVersion: snapshot.storage.k8s.io/v1
+kind: VolumeSnapshotClass
+metadata:
+  name: nutanix-volume-snapshot-class
+driver: csi.nutanix.com
+parameters:
+  storageType: NutanixVolumes
+  csi.storage.k8s.io/snapshotter-secret-name: ntnx-secret-<random-uuid-to-replace>
+  csi.storage.k8s.io/snapshotter-secret-namespace: kube-system
+deletionPolicy: Delete

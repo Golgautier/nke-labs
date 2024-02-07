@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: pe-files-dynamic-secret
+  namespace: kube-system
+stringData:
+  # Provide Nutanix Prism Element credentials which is a default UI credential separated by colon in "key:".
+  # Provide Nutanix File Server credentials which is a REST API user created on File server UI separated by colon in "files-key:".
+  key: "<PE IP or FQDN>:9440:<PE username>:<PE password>"
+  files-key: "<your-file-server>:<file-server rest api user>:<fileserver rest api password>"

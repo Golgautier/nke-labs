@@ -1,0 +1,20 @@
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: nutanix-files-dynamic
+parameters:
+  csi.storage.k8s.io/node-publish-secret-name: pe-files-dynamic-secret
+  csi.storage.k8s.io/node-publish-secret-namespace: kube-system
+  csi.storage.k8s.io/controller-expand-secret-name: pe-files-dynamic-secret
+  csi.storage.k8s.io/controller-expand-secret-namespace: kube-system
+  csi.storage.k8s.io/provisioner-secret-name: pe-files-dynamic-secret
+  csi.storage.k8s.io/provisioner-secret-namespace: kube-system
+  storageType: NutanixFiles
+  squashType: root-squash
+  nfsServerName: <your file server>
+  dynamicProv: ENABLED
+provisioner: csi.nutanix.com
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
+allowVolumeExpansion: true

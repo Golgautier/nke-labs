@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: my-pvc-clone
+spec:
+  dataSource:
+   name: my-pvc
+   kind: PersistentVolumeClaim
+ accessModes:
+   - ReadWriteOnce
+ resources:
+   requests:
+     storage:  6Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-dep-clone
+  labels:
+    app: my-app-clone
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-app-clone
+  template:
+    metadata:
+      labels:
+        app: my-app-clone
+    spec:
+      containers:
+        - name: my-cont
+          image: public.ecr.aws/docker/library/nginx:stable
+          imagePullPolicy: Always
+          volumeMounts:
+            - mountPath: /usr/share/nginx/html
+              name: mypvc-clone
+      volumes:
+        - name: mypvc-clone
+          persistentVolumeClaim:
+            claimName: my-pvc-clone
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-svc-app-clone
+spec:
+  selector:
+    app: my-app-clone
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
