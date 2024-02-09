@@ -1,0 +1,44 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-my-app-files-static
+  labels:
+    app: my-app-files-static
+spec:
+  storageClassName: nutanix-files-static
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 3Gi
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: replicaset-my-app-files-static
+  labels:
+    app: my-app-files-static
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: my-app-files-static
+  template:
+    metadata:
+      labels:
+        app: my-app-files-static
+    spec:
+      volumes:
+        - name: pv-my-app-files-static
+          persistentVolumeClaim:
+            claimName: pvc-my-app-files-static
+      containers:
+        - name: my-app-files-static
+          image: public.ecr.aws/docker/library/nginx:stable
+          ports:
+            - containerPort: 80
+              name: "http-server"
+          volumeMounts:
+            - mountPath: "/usr/share/nginx/html"
+              name: pv-my-app-files-static

@@ -23,7 +23,7 @@ You can have (only) one default Storage Class on your kubernetes cluster. If you
 Two Nutanix Files mode can be created :
 
 - Static : A share, located on a Nutanix File Server will be used to store all volumes created by the CSI. It doesn't require any specific access to Prism Element, as it will target directly Nutanix Files NFS Server
-- Dynamic : One dedicated share will be created for each volume created by the CSI. A secret storing Prism Element username and passward, and Nutanix Files API username and password will be required.
+- Dynamic : One dedicated share will be created for each volume created by the CSI. A secret storing Prism Element username and password, and Nutanix Files API username and password will be required.
 
 # Exercise
 
@@ -33,7 +33,8 @@ Two Nutanix Files mode can be created :
    <details>
    <summary>Answer</summary>
 
-   > 1. Create a manifest to deploy :
+   > 1. Create a manifest to deploy :<br>
+        Manifest file : ./manifests/01.yaml
    >    ```yaml
    >    ---
    >    kind: StorageClass
@@ -56,7 +57,7 @@ Two Nutanix Files mode can be created :
    <summary>Answer</summary>
     
    > 1. Launch command `kubectl apply -f <your manifest file>`
-   > 1. Then launch command `kubectl get storageclass`<br>You shloud have this output :
+   > 1. Then launch command `kubectl get storageclass`<br>You should have this output :
    >    ```
    >    NAME                             PROVISIONER       RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
    >    default-storageclass (default)   csi.nutanix.com   Delete          Immediate           true                   6d
@@ -69,7 +70,8 @@ Two Nutanix Files mode can be created :
    <details>
    <summary>Answer</summary>
 
-   > 1. Create a manifest to deploy :
+   > 1. Create a manifest to deploy :<br>
+        Manifest file : ./manifests/02.yaml
    >    ```yaml
    >    ---
    >    apiVersion: v1
@@ -88,7 +90,8 @@ Two Nutanix Files mode can be created :
    <details>
    <summary>Answer</summary>
 
-   > 1. Create a manifest to deploy :
+   > 1. Create a manifest to deploy :<br>
+        Manifest file : ./manifests/03.yaml
    >    ```yaml
    >    ---
    >    apiVersion: storage.k8s.io/v1
@@ -140,7 +143,8 @@ Two Nutanix Files mode can be created :
    <details>
    <summary>Answer</summary>
 
-   > 1. Create a manifest to deploy :
+   > 1. Create a manifest to deploy :<br>
+        Manifest file : ./manifests/04.yaml
    >    ```yaml
    >    ---
    >    apiVersion: v1
@@ -179,12 +183,12 @@ Two Nutanix Files mode can be created :
    >                claimName: pvc-my-app-files-static
    >          containers:
    >            - name: my-app-files-static
-   >              image: gautierleblanc/nke-labs:latest
+   >              image: public.ecr.aws/docker/library/nginx:stable
    >              ports:
    >                - containerPort: 80
    >                  name: "http-server"
    >              volumeMounts:
-   >                - mountPath: "/data"
+   >                - mountPath: "/usr/share/nginx/html"
    >                  name: pv-my-app-files-static
    >    ```
    > 2. Launch command `kubectl apply -f <your manifest file>`
@@ -201,13 +205,14 @@ Two Nutanix Files mode can be created :
 
    - a replicaset named replicaset-my-app-files-dynamic
    - a 3GB pvc using the storage class nutanix-files-dynamic, in ReadWriteMany (RWX) mode
-     - this volume will be mounted in /data in the pod
+     - this volume will be mounted in /usr/share/nginx/html in the pod
 
 1. Test the PVC has been created, and has a Bound status.
    <details>
    <summary>Answer</summary>
 
-   > 1. Create a manifest to deploy :
+   > 1. Create a manifest to deploy :<br>
+        Manifest file : ./manifests/05.yaml
    >    ```yaml
    >    ---
    >    apiVersion: v1
@@ -246,12 +251,12 @@ Two Nutanix Files mode can be created :
    >                claimName: pvc-my-app-files-dynamic
    >          containers:
    >            - name: my-app-files-dynamic
-   >              image: gautierleblanc/nke-labs:latest
+   >              image: public.ecr.aws/docker/library/nginx:stable
    >              ports:
    >                - containerPort: 80
    >                  name: "http-server"
    >              volumeMounts:
-   >                - mountPath: "/data"
+   >                - mountPath: "/usr/share/nginx/html"
    >                  name: pv-my-app-files-dynamic
    >    ```
    > 2. Launch command `kubectl apply -f <your manifest file>`

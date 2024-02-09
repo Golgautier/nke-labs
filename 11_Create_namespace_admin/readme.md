@@ -36,12 +36,12 @@ If you strugglle during this lab, you will find all needed documentation here : 
 
    > 1. Connect on PC with admin user
    > 1. In the main menu, select `Admin Center`
-   > 1. In the lefs menu, select `IAM`
+   > 1. In the left menu, select `IAM`
    > 1. Click on tab `Settings > Local User Management`
    > 1. Click on button `New User`
    > 1. Fill form :
    >    - Username : `<initials>_user`
-   >    - Completes first name, last name & email
+   >    - Complete first name, last name & email
    >    - Password : `nx2Tech123!`
    > 1. Save the user
    > 1. He should appear as simple viewer in the list
@@ -51,7 +51,7 @@ If you strugglle during this lab, you will find all needed documentation here : 
 1. In another browser (or a private session in your browser), connect on PC with your new user
 1. Go on NKE Interface
 1. Select your NKE cluster, download kubeconfig on your laptop
-1. Open the kubeconfig file, get the user tocken and decode it on https://jwt.io/
+1. Open the kubeconfig file, get the user token and decode it on https://jwt.io/
 
    - What is your user ? What is his role ?
        <details>
@@ -74,7 +74,7 @@ If you strugglle during this lab, you will find all needed documentation here : 
    <summary>Answer</summary>
 
    > - Expected role is `admin`
-   > - Be carreful, this is not really a `Role`, but a `ClusterRole` we will apply to a specific namespace.
+   > - Be careful, this is not really a `Role`, but a `ClusterRole` we will apply to a specific namespace.
 
    </details><br>
 
@@ -111,7 +111,7 @@ If you strugglle during this lab, you will find all needed documentation here : 
 
    </details><br>
 
-1. Get kubeconfig from your local account file with hte kubctl karbon plugin. Then try to create create a simple pod in `default` namespace, and finaly in your namespace.
+1. Get kubeconfig from your local account file with the kubctl karbon plugin. Then try to create a simple pod in `default` namespace, and finaly in your namespace.
 
    <details>
    <summary>Answer</summary>
@@ -127,4 +127,4 @@ If you strugglle during this lab, you will find all needed documentation here : 
 
 # Takeover
 
-We have seen how simple it is to create a user (local to Prism, or from AD) and give him rights to a dedicated namespace. If you want to go deeper, look at `Role` creation to create very spocific RBAC rules. Kubernetes allows to manage almost everything regarding RBAC.
+We have seen how simple it is to create a user (local to Prism, or from AD) and give him rights to a dedicated namespace. If you want to go deeper, look at `Role` creation to create very specific RBAC rules. Kubernetes allows to manage almost everything regarding RBAC.

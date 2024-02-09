@@ -2,12 +2,12 @@ _Difficulty: 1/5_
 
 # Summary:
 
-This exercise will teach you how to deploy activate Nutanix Kubernetes Engine on a Nutanix Cluster.
+This exercise will teach you how to activate Nutanix Kubernetes Manager on a Nutanix Cluster.
 
 # Prerequisites
 
 - A Nutanix cluster
-- A Prism Central (>PC.2023.1.0.1), connected to his hosting cluster
+- A Prism Central (>PC.2023.1.0.1), connected to its hosting cluster
 - Admin credentials for this Prism Central
 
 Note that this exercise can be done only once per Prism Central.
@@ -39,7 +39,7 @@ Note that this exercise can be done only once per Prism Central.
    > 1. Click on `audit` tab
    >    <br>![Image 5](images/5.png?raw=true)
    > 1. You can expand `Create` object and inspect deployment workflow.
-   > 1. When all tasks are finshed (and green), you app will get `running` state
+   > 1. When all tasks are finished (and green), your app will get `running` state
    >    <br>![Image 6](images/6.png?raw=true)
 
    </details><br>

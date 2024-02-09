@@ -8,7 +8,7 @@ This exercise will teach you how to create a Kubernetes cluster with NKE.
 
 - A Nutanix cluster using AHV
   - ESXi is not supported for NKE clusters
-- Nutanix Kubernetes Engine need to be activated in Prism [link]([https://portal.nutanix.com/page/documents/details?targetId=Nutanix-Kubernetes-Engine-v2_8:top-install-t.html) and up-to-date
+- Nutanix Kubernetes Engine needs to be activated in Prism [link](https://portal.nutanix.com/page/documents/details?targetId=Nutanix-Kubernetes-Engine-v2_8:top-install-t.html) and up-to-date
 - A Prism account authorized to deploy NKE clusters
 - Network :
   - **Production clusters** : Configure an AHV network with IP address management (IPAM) enabled and IP pools configured.
@@ -45,7 +45,7 @@ This exercise will teach you how to create a Kubernetes cluster with NKE.
      - Tip : NKE supports only lower chars and dash symbol
    - Nutanix cluster : choose the cluster of your choice (if you have many)
    - Kubernetes version : choose the **last version - 1** (it will allow us to test upgrade later)
-   - Host OS : choose the **last version -1** (it will allow us to test upgrade later)
+   - Host OS : choose the **last version -1** (if possible, it will allow us to test upgrade later)
    - Network : Choose the network of your choice
    - Number of workers : 3
    - Change config of worker to setup : 8 vCPU, 12 GB of RAM and 120 GB of disk
@@ -109,7 +109,7 @@ This exercise will teach you how to create a Kubernetes cluster with NKE.
 
    </details><br>
 
-1. Use kubectl command to get nodes list and validate k8s cluster connection
+1. Use kubectl command to get nodes list and validate K8s cluster connection
    <details>
    <summary>Answer</summary>
 
@@ -136,4 +136,4 @@ This exercise will teach you how to create a Kubernetes cluster with NKE.
 # Takeover
 
 - NKE is a perfect solution to deploy kubernetes clusters without any skills
-- 2 types of deployment are available, production type provisions a highly available cluster
+- 2 options of deployment are available, production option provisions a highly available K8s cluster

@@ -4,7 +4,7 @@
 
 This exercise will teach you how to create a new admin account on a k8s cluster. It will provide to you a kubeconfig file valid more than 24h.
 
-Just be carreful about security leak it represents.
+Just be careful about security leak it represents.
 
 # Prerequisites
 * A NKE cluster ready to use with kubeconfig to connect on as admin.
@@ -34,12 +34,12 @@ If you strugglle during this lab, you will find all needed documentation here : 
     
     >1. Connect on PC with admin user
     >1. In the main menu, select `Admin Center`
-    >1. In the lefs menu, select `IAM`
+    >1. In the left menu, select `IAM`
     >1. Click on tab `Settings > Local User Management`
     >1. Click on button `New User`
     >1. Fill form :
     >       * Username : `<initials>_user`
-    >       * Completes first name, last name & email
+    >       * Complete first name, last name & email
     >       * Password : `nx2Tech123!`
     >1. Save the user
     >1. He should appear as simple viewer in the list
@@ -48,7 +48,7 @@ If you strugglle during this lab, you will find all needed documentation here : 
 1. In another browser (or a private session in your browser), connect on PC with your new user
 1. Go on NKE Interface
 1. Select your NKE cluster, download kubeconfig on your laptop
-1. Open the kubeconfig file, get the user tocken and decode it on https://jwt.io/
+1. Open the kubeconfig file, get the user token and decode it on https://jwt.io/
     * What is your user ? What is his role ? 
         
         <details>
@@ -85,15 +85,15 @@ If you strugglle during this lab, you will find all needed documentation here : 
         > apiVersion: rbac.authorization.k8s.io/v1
         > kind: ClusterRoleBinding
         > metadata:
-        > name: gl-user-admin
+        >   name: gl-user-admin
         > subjects:
         > - kind: User
-        > name: <initials>_user
-        > apiGroup: rbac.authorization.k8s.io
+        >   name: <initials>_user
+        >   apiGroup: rbac.authorization.k8s.io
         > roleRef:
-        > kind: ClusterRole
-        > name: cluster-admin
-        > apiGroup: rbac.authorization.k8s.io
+        >   kind: ClusterRole
+        >   name: cluster-admin
+        >   apiGroup: rbac.authorization.k8s.io
         >```
 
         </details><br>
@@ -121,4 +121,4 @@ If you strugglle during this lab, you will find all needed documentation here : 
 
 # Takeover
 
-If you want to create a new admin user, with no kubeconfig expiration time, it is possible with several method. The simplest and clean way to proceed is using Prism IDP and just assigne cluster role `cluster-admin` to this local (or AD) user.
+If you want to create a new admin user, with no kubeconfig expiration time, it is possible with several method. The simplest and clean way to proceed is using Prism IDP and just assign cluster role `cluster-admin` to this local (or AD) user.
