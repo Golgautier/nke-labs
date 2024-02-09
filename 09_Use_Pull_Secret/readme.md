@@ -2,9 +2,9 @@ _Difficulty: 2/5_
 
 # Summary:
 
-This exercise will teach you how to use an accound to download containers images from your registry.
+This exercise will teach you how to use an account to download containers images from your registry.
 
-In this exercise, we will to it for dockerhub.
+In this exercise, we will do it for dockerhub.
 
 # Prerequisites
 
@@ -18,8 +18,8 @@ In this exercise, we will to it for dockerhub.
    <summary>Answer</summary>
 
    > 1. Launch command `docker login`
-   > 1. Answer to uername and password requests
-   > 1. You should be successfuly logged in.
+   > 1. Answer to username and password requests
+   > 1. You should be successfully logged in.
 
    > </details><br>
 
@@ -32,7 +32,7 @@ In this exercise, we will to it for dockerhub.
 
    > </details><br>
 
-1. Inspect yaml code from your secret with `kubectl get` command
+1. Inspect YAML code from your secret with `kubectl get` command
    <details>
    <summary>Answer</summary>
 
@@ -43,7 +43,7 @@ In this exercise, we will to it for dockerhub.
 1. Create a simple manifest to create :
 
    - A pod with image `gautierleblanc/nke-labs:latest`
-   - Using you secret for the download from dockerhub registry
+   - Using your secret for the download from dockerhub registry
 
    <details>
    <summary>Answer</summary>
@@ -69,4 +69,4 @@ In this exercise, we will to it for dockerhub.
 
 # Takeover
 
-`ImagePullSecret` is a great way to use authentication on registries. It can be very usefull for test, when you use public registries limiting number of anonymous download per IP.
+`ImagePullSecret` is a great way to use authentication on registries. It can be very useful for test, when you use public registries limiting number of anonymous download per IP.

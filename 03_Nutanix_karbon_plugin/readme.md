@@ -22,7 +22,7 @@ A great plugin exists for kubectl to directly get the kubeconfig file from Prism
    <details>
    <summary>Answer</summary>
 
-   > 1. Look at the installation options on the github repo, and choose the prefered one
+   > 1. Look at the installation options on the github repo, and choose the preferred one
    > 1. Install the plugin. For example `brew install nutanix/tap/kubectl-karbon`
 
    </details><br>

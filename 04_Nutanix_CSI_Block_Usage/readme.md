@@ -16,7 +16,7 @@ Nutanix provides a CSI driver to consume storage with kubernetes.
 
 The CSI driver can use block storage (using Nutanix Volumes) and files storage (using Nutanix Files). We often use block storage by default, for RWO (Read Write Once persistent Volume) and files storage for RWX (Read WRite Many) access.
 
-To create a persistent volume (PV) on a Kubernetes cluster, you need to do a persistent volume claim (PVC). This PVC will use a storage class (SC) to get all needed informations to request PV creation.
+To create a persistent volume (PV) on a Kubernetes cluster, you need to do a persistent volume claim (PVC). This PVC will use a storage class (SC) to get all needed information to request PV creation.
 
 You can have (only) one default Storage Class on your kubernetes cluster. If your PVC does not specify Storage Class, the default one will be used.
 
@@ -29,7 +29,7 @@ You can have (only) one default Storage Class on your kubernetes cluster. If you
    <summary>Answer</summary>
 
    > 1. Get kubeconfig file for your NKE cluster
-   > 1. Then launch command `kubectl get storageclass` > <br>You shloud have this output :
+   > 1. Then launch command `kubectl get storageclass` > <br>You should have this output :
    >    ```
    >    NAME                        PROVISIONER       RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
    >    nutanix-volumes (default)   csi.nutanix.com   Delete          Immediate           true                   32h
@@ -120,12 +120,12 @@ You can have (only) one default Storage Class on your kubernetes cluster. If you
    <details>
    <summary>Answer</summary>
 
-   > 1. Launch command `kubectl get pods -n <your namespace>` > <br>You shloud have this output :
+   > 1. Launch command `kubectl get pods -n <your namespace>` > <br>You should have this output :
    >    ```
    >    NAME                      READY   STATUS    RESTARTS   AGE
    >    my-dep-7c784c98c4-hd6kt   1/1     Running   0          3m24s
    >    ```
-   > 1. Check your pod state. It sould be : `running`
+   > 1. Check your pod state. It should be : `running`
 
    </details><br>
 
@@ -133,7 +133,7 @@ You can have (only) one default Storage Class on your kubernetes cluster. If you
    <details>
    <summary>Answer</summary>
 
-   > 1. Launch command `kubectl get pvc -n <your namespace>` > <br>You shloud have this output :
+   > 1. Launch command `kubectl get pvc -n <your namespace>` > <br>You should have this output :
    >    ```
    >    NAME     STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS      AGE
    >    my-pvc   Bound    pvc-1c6d3f88-d807-4f7b-94ae-24876b0f8ae7   5Gi        RWO            nutanix-volumes   4h15m
@@ -334,7 +334,7 @@ You can have (only) one default Storage Class on your kubernetes cluster. If you
    <details>
    <summary>Answer</summary>
 
-   > 1. Launch command `kubectl delete -f <path to your manifest> -n <your namespace>`
+   > 1. Launch command `kubectl delete -f <your manifest file> -n <your namespace>`
 
    </details><br>
 
@@ -345,7 +345,7 @@ You can have (only) one default Storage Class on your kubernetes cluster. If you
    <details>
    <summary>Answer</summary>
 
-   > 1. Create a manifest to create a snapshot class. Warning, your secret name can be different, check this point first with the command `kubectl get secret -n kube-system`.<br>
+   > 1. Create a manifest to create a snapshot class. Warning: your secret name can be different, check this point first with the command `kubectl get secret -n kube-system`.<br>
         Manifest file : ./manifests/04.yaml
 
    > ```yaml
@@ -361,7 +361,7 @@ You can have (only) one default Storage Class on your kubernetes cluster. If you
    >   csi.storage.k8s.io/snapshotter-secret-namespace: kube-system
    > deletionPolicy: Delete
    > ```
-   > 1. Apply it with command `kubectl apply -f <your maninifest file> -n <your namespace>`
+   > 1. Apply it with command `kubectl apply -f <your manifest file> -n <your namespace>`
    > 1. Create another manifest to clone your 1st pvc<br>
         Manifest file : ./manifests/05.yaml
    > ```yaml
@@ -375,7 +375,7 @@ You can have (only) one default Storage Class on your kubernetes cluster. If you
    >   source:
    >     persistentVolumeClaimName: my-pvc
    >  ```
-   > 1. Apply it with command `kubectl apply -f <your maninifest file> -n <your namespace>`
+   > 1. Apply it with command `kubectl apply -f <your manifest file> -n <your namespace>`
 
    </details><br>
 
@@ -442,7 +442,7 @@ You can have (only) one default Storage Class on your kubernetes cluster. If you
    >      storage: 6Gi
    >
    >    ```
-   > 1. Launch command `kubectl apply -f <your manifest> -n <your namespace>`
+   > 1. Launch command `kubectl apply -f <your manifest file> -n <your namespace>`
 
    </details><br>
 

@@ -22,4 +22,4 @@ Useful resources :
 
 - [Manifest models](./Manifest_models/)
 - [Kubernetes official documentation](https://kubernetes.io/docs/home/)
-- [k9s](https://k9scli.io/) is a great tool to parse and interact with k8s clusters, instead of long `kubectl` commands.
+- [k9s](https://k9scli.io/) is a great tool to parse and interact with K8s clusters, instead of long `kubectl` commands.

@@ -57,7 +57,7 @@ But it does not mean we are not able to restrict network exchanges between pods,
    >       port: 80
    >       targetPort: 80
    >   ```
-   > - Apply it in the both namespaces with commmand `kubectl apply -f <manifest file> -n <your namespace>`
+   > - Apply it in the both namespaces with command `kubectl apply -f <manifest file> -n <your namespace>`
 
    </detail><br>
 

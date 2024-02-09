@@ -2,7 +2,7 @@ _Difficulty: 1/5_
 
 # Summary:
 
-This exercise will teach you how scale a NKE cluster with an additionnal node
+This exercise will teach you how scale a NKE cluster with an additional node
 
 # Prerequisites
 
@@ -31,7 +31,7 @@ It allows to simply adapt the Kubernetes worker needed to host the application w
    <summary>Answer</summary>
 
    > 1. Click on your cluster
-   > 1. Click on Node Polls / Worker<br>![Image 2](images/2.png?raw=true)
+   > 1. Click on Node Pools / Worker<br>![Image 2](images/2.png?raw=true)
    > 1. Select the node pool / Action / Resize <br>![Image 3](images/3.png?raw=true)
    > 1. Specify the total number of nodes you want in your node pool / Click resize <br>![Image 4](images/4.png?raw=true)
 
@@ -39,7 +39,7 @@ It allows to simply adapt the Kubernetes worker needed to host the application w
    <details>
    <summary>Answer</summary>
 
-   > 1. Use kubectl command tool to get the node list. We'll use the -w option to watch it continously and see the transition<br>
+   > 1. Use kubectl command tool to get the node list. We'll use the -w option to watch it continuously and see the transition<br>
      `kubectl get nodes -w`
 
 ## Remove a worker from an existing node pool.

@@ -13,11 +13,11 @@ This exercise will teach you how to upgrade an existing NKE cluster to a newest 
 
 Nutanix NKE allows to automate OS and Kubernetes upgrade in One-Click.
 
-It allows to quickly and safely upgrade an existing cluster in a couple of minutes, automaticaly.
+It allows to quickly and safely upgrade an existing cluster in a couple of minutes, automatically.
 
 # Exercise
 
-## Upgrade NKE to a newest version
+## Upgrade NKE to a newer version
 
 1. Go on NKE page in Prism
    <details>
@@ -39,7 +39,7 @@ It allows to quickly and safely upgrade an existing cluster in a couple of minut
    <details>
    <summary>Answer</summary>
 
-   > 1. Use kubectl command tool continously show the node status<br>
+   > 1. Use kubectl command tool continuously show the node status<br>
      `kubectl get nodes -w`
 
 # Takeover

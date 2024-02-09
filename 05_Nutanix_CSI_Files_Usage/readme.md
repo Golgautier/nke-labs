@@ -57,7 +57,7 @@ Two Nutanix Files mode can be created :
    <summary>Answer</summary>
     
    > 1. Launch command `kubectl apply -f <your manifest file>`
-   > 1. Then launch command `kubectl get storageclass`<br>You shloud have this output :
+   > 1. Then launch command `kubectl get storageclass`<br>You should have this output :
    >    ```
    >    NAME                             PROVISIONER       RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
    >    default-storageclass (default)   csi.nutanix.com   Delete          Immediate           true                   6d
